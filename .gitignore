@@ -1,0 +1,17 @@
+# Arquivos do Python
+*.pyc
+__pycache__/
+
+# Banco de dados local
+db.sqlite3
+
+# Ambiente virtual
+venv/
+.env
+
+# Arquivos temporários
+*.log
+
+# Diretórios estáticos e de mídia
+/static/
+media/
