@@ -7,4 +7,6 @@ urlpatterns = [
 
     path('jogador/', include('Jogador.urls')),
     path('guilda/', include('Guilda.urls')),
+     path('npc/', include('NPC.urls')),
+     path('item/', include('Item.urls')),
 ]

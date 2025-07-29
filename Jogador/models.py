@@ -12,7 +12,7 @@ class Jogador(models.Model):
     class Meta:
         db_table = "Jogador_jogadores"
         permissions = [
-            ("detail_setor", "Pode ver o detalhe de setor"),
+            ("detail_jogador", "Pode ver o detalhe de jogador"),
         ]
 
     def __str__(self):

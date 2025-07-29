@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Jogador',
     'Guilda',
+    'NPC',
+    'Item',
 ]
 
 MIDDLEWARE = [
