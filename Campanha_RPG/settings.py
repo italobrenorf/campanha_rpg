@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'Guilda',
     'NPC',
     'Item',
+    'Monstro',
+    'Dungeon',
 ]
 
 MIDDLEWARE = [
