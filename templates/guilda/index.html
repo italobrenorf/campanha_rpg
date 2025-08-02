@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guildas</title>
 </head>
+
 <body>
-    Aqui mostra as guildas
+    <h3>Aqui mostra as Guildas</h3>
+
+    <a href="/guilda/add/"> Criar nova guida </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for guilda in guildas %}
+            <tr>
+                <td> {{ guilda.nome }}</td>
+                <td> <a href="/guilda/{{guilda.id}}"> Detalhes </a> </td>
+                <td> <a href="/guilda/edit/{{guilda.id}}"> Editar </a> </td>
+                <td> <a href="/guilda/delete/{{guilda.id}}"> Deletar </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
+
 </html>

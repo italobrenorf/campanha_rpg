@@ -7,7 +7,7 @@ class Jogador(models.Model):
     raca = models.CharField(max_length=50)
     nivel = models.IntegerField()
     hp = models.IntegerField()
-    guilda = models.ForeignKey(Guilda, on_delete=models.SET_NULL, null=True, blank=True)
+    guilda = models.ForeignKey(Guilda, on_delete=models.SET_NULL, null=True, blank=True, related_name='membros')
 
     class Meta:
         db_table = "Jogador_jogadores"

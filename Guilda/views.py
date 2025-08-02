@@ -34,7 +34,7 @@ def edita(request, id_guilda):
         form = GuildaForm(instance=guilda)
     return render(request, 'guilda/edita.html', {'form': form})
 
-def deleta(id_guilda):
+def deleta(request, id_guilda):
     guilda = Guilda.objects.get(id=id_guilda)
     guilda.delete()
     return HttpResponseRedirect("/guilda/")

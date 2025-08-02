@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogadores</title>
 </head>
+
 <body>
-    Aqui mostra os jogadores
+    <h3>Aqui mostra os jogadores</h3>
+
+    <a href="/jogador/add/"> Criar novo jogador </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th> Classe </th>
+                <th> Raça </th>
+                <th> Nível </th>
+                <th> HP </th>
+                <th> Guilda </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogador in jogadores %}
+            <tr>
+                <td> {{ jogador.nome }}</td>
+                <td> {{ jogador.classe }}</td>
+                <td> {{ jogador.raca }}</td>
+                <td> {{ jogador.nivel }}</td>
+                <td> {{ jogador.hp }}</td>
+                <td> {{ jogador.guilda|default:"Sem Guilda" }}</td>
+                <td> <a href="/jogador/{{jogador.id}}"> Detalhes </a> </td>
+                <td> <a href="/jogador/edit/{{jogador.id}}"> Editar </a> </td>
+                <td> <a href="/jogador/delete/{{jogador.id}}"> Deletar </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
+
 </html>

@@ -34,7 +34,7 @@ def edita(request, id_jogador):
         form = JogadorForm(instance=jogador)
     return render(request, 'jogador/edita.html', {'form': form})
 
-def deleta(id_jogador):
+def deleta(request, id_jogador):
     jogador = Jogador.objects.get(id=id_jogador)
     jogador.delete()
     return HttpResponseRedirect("/jogador/")
