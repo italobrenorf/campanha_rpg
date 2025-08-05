@@ -5,6 +5,8 @@ class npc(models.Model):
     nome = models.CharField(max_length=100)
     classe = models.CharField(max_length=50)
     raca = models.CharField(max_length=50)
+    descricao = models.TextField(blank=True)
+    
     class Meta:
         db_table = "npc_npcs"
         permissions = [

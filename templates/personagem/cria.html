@@ -1,0 +1,14 @@
+<h3>Criar Personagem</h3>
+
+<form method="post"action="">
+    {% csrf_token %}
+
+    {% for field in form %}
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        <br> <br>
+    {% endfor %}
+
+    <button type="submit">Criar</button>
+
+</form>

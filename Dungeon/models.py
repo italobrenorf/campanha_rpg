@@ -3,7 +3,8 @@ from Guilda.models import Guilda
 
 class Dungeon(models.Model):
     nome = models.CharField(max_length=100)
-    nivelrecomendado = models.IntegerField()
+    descricao = models.TextField()
+    nivel_minimo = models.IntegerField(default=1)
 
 
     class Meta:

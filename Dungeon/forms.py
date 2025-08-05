@@ -4,4 +4,4 @@ from django.forms import ModelForm
 class DungeonForm(ModelForm):
     class Meta: 
         model =  Dungeon
-        fields = ['nome', 'nivelrecomendado']
+        fields = ['nome', 'descricao', 'nivel_minimo']

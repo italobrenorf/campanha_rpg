@@ -12,17 +12,16 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='npc',
+            name='Efeito',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('nome', models.CharField(max_length=100)),
-                ('classe', models.CharField(max_length=50)),
-                ('raca', models.CharField(max_length=50)),
-                ('descricao', models.TextField(blank=True)),
+                ('descricao', models.TextField()),
+                ('duracao', models.CharField(blank=True, max_length=50)),
             ],
             options={
-                'db_table': 'npc_npcs',
-                'permissions': [('detail_npc', 'Pode ver o detalhe do npc')],
+                'db_table': 'Efeito_efeitos',
+                'permissions': [('detail_efeitos', 'Pode ver o detalhe de efeito')],
             },
         ),
     ]
