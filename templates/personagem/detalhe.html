@@ -1,6 +1,9 @@
+{% extends '_base.html' %}
+
+{% block content %}
 <h3>{{ personagem.nome }}</h3>
 <h3>Jogador</h3>
-<p>{{ personagem.user }}</p>
+<p>{{ personagem.Usuario }}</p>
 <h3>Classe</h3>
 <p>{{ personagem.classe }}</p>
 <h3>Raça</h3>
@@ -17,3 +20,5 @@
 <p>{{ personagem.historia }}</p>
 
 <a href="/personagem/">← Voltar</a>
+
+{% endblock %}

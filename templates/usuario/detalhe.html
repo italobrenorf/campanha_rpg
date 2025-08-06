@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ usuario.nome }}</h3>
+<h3>Idade</h3>
+<p>{{ usuario.idade }}</p>
+<h3>Telefone</h3>
+<p>{{ usuario.telefone }}</p>
+
+<a href="/usuario/">← Voltar</a>
+
+{% endblock %}

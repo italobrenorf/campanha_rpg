@@ -1,5 +1,4 @@
 from django.db import models
-from Guilda.models import Guilda
 
 class Dungeon(models.Model):
     nome = models.CharField(max_length=100)

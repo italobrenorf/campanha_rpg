@@ -1,11 +1,11 @@
 from django.http import HttpResponseRedirect
-from .models import item
+from .models import Item
 from django.shortcuts import render
 from .forms import ItemForm
 
 def index(request):
 
-    itens = item.objects.all()
+    itens = Item.objects.all()
 
     return render(request, 'item/index.html', {'itens': itens})
 
@@ -23,7 +23,7 @@ def cria(request):
 
 def edita(request, id_item):
 
-    Item = item.objects.get(id=id_item)
+    item = Item.objects.get(id=id_item)
 
     if request.method == "POST":
         form = ItemForm(request.POST, instance=item)
@@ -35,12 +35,12 @@ def edita(request, id_item):
     return render(request, 'item/edita.html', {'form': form})
 
 def deleta(id_item):
-    item = item.objects.get(id=id_item)
+    item = Item.objects.get(id=id_item)
     item.delete()
     return HttpResponseRedirect("/item/")
 
 def detalha(request, id_item):
 
-    item = item.objects.get(id=id_item)
+    item = Item.objects.get(id=id_item)
 
     return render(request, 'item/detalhe.html', {'item': item})

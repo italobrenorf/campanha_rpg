@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ inventario.personagem }}</h3>
+<h3>Item</h3>
+<p>{{ inventario.item }}</p>
+<h3>Quantidade</h3>
+<p>{{ inventario.quantidade }}</p>
+<h3>Equipado</h3>
+<p>{{ inventario.equipado }}</p>
+
+<a href="/inventario/">← Voltar</a>
+
+{% endblock %}

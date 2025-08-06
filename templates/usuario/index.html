@@ -1,0 +1,32 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <h3>Aqui mostra os usuarios</h3>
+
+    <a href="/usuario/add/"> Criar novo usuario </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th> Idade </th>
+                <th> Telefone </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td> {{ usuario.nome }}</td>
+                <td> {{ usuario.idade }}</td>
+                <td> {{ usuario.telefone }}</td>
+                <td> <a href="/usuario/{{usuario.id}}"> Detalhes </a> </td>
+                <td> <a href="/usuario/edit/{{usuario.id}}"> Editar </a> </td>
+                <td> <a href="/usuario/delete/{{usuario.id}}"> Deletar </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

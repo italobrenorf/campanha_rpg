@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ npc.nome }}</h3>
+<h3>Classe</h3>
+<p>{{ npc.classe }}</p>
+<h3>Raça</h3>
+<p>{{ npc.raca }}</p>
+<h3>Descrição</h3>
+<p>{{ npc.descricao }}</p>
+
+<a href="/npc/">← Voltar</a>
+
+{% endblock %}

@@ -1,11 +1,11 @@
 from django.http import HttpResponseRedirect
-from .models import npc
+from .models import Npc
 from django.shortcuts import render
 from .forms import NpcForm
 
 def index(request):
 
-    npcs = npc.objects.all()
+    npcs = Npc.objects.all()
 
     return render(request, 'npc/index.html', {'npcs': npcs})
 
@@ -23,7 +23,7 @@ def cria(request):
 
 def edita(request, id_npc):
 
-    npc = npc.objects.get(id=id_npc)
+    npc = Npc.objects.get(id=id_npc)
 
     if request.method == "POST":
         form = NpcForm(request.POST, instance=npc)
@@ -35,12 +35,12 @@ def edita(request, id_npc):
     return render(request, 'npc/edita.html', {'form': form})
 
 def deleta(id_npc):
-    npc = npc.objects.get(id=id_npc)
+    npc = Npc.objects.get(id=id_npc)
     npc.delete()
     return HttpResponseRedirect("/npc/")
 
 def detalha(request, id_npc):
 
-    npc = npc.objects.get(id=id_npc)
+    npc = Npc.objects.get(id=id_npc)
 
     return render(request, 'npc/detalhe.html', {'npc': npc})

@@ -1,11 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monstros</title>
-</head>
-<body>
-    Aqui mostra os monstros
-</body>
-</html>
+{% extends '_base.html' %}
+
+{% block content %}
+    <h3>Aqui mostra os monstros</h3>
+
+    <a href="/monstro/add/"> Criar novo monstro </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome</th>
+                <th> Nível </th>
+                <th> Hp </th>
+                <th> Raça </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for monstro in monstros %}
+            <tr>
+                <td> {{ monstro.nome }}</td>
+                <td> {{ monstro.nivel}}</td>
+                <td> {{ monstro.hp }}</td>
+                <td> {{ monstro.raca }}</td>
+                <td> <a href="/monstro/{{monstro.id}}"> Detalhes </a> </td>
+                <td> <a href="/monstro/edit/{{monstro.id}}"> Editar </a> </td>
+                <td> <a href="/monstro/delete/{{monstro.id}}"> Deletar </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}

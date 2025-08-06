@@ -1,9 +1,9 @@
 from django.db import models
 from Guilda.models import Guilda
-from django.contrib.auth.models import User
+from Usuario.models import Usuario
 
 class Personagem(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    Usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
     classe = models.CharField(max_length=50)
     raca = models.CharField(max_length=50)

@@ -1,27 +1,33 @@
 {% extends '_base.html' %}
-{% load static %}
-
-{% block title %}NPCs - Campanha RPG{% endblock %}
 
 {% block content %}
-<section class="section npc-list">
-    <div class="container">
-        <h1 class="section-title">Personagens Não Jogáveis (NPCs)</h1>
+    <h3>Aqui mostra os npcs</h3>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-            {% for npcs in npc %}
-            <div class="card bg-dark-2 text-white rounded-xl p-4 shadow-lg">
-                <div class="card-content">
-                    <h2 class="text-xl font-bold">{{ npc.nome }}</h2>
-                    <p class="text-sm text-gray-400 mb-2">{{ npc.raca }} - {{ npc.classe }}</p>
-                    <p class="text-sm">{{ npc.descricao|truncatewords:20 }}</p>
-                    <a href="{% url 'npc:detalhe' npc.id %}" class="inline-block mt-4 text-sm text-indigo-400 hover:underline">Ver mais</a>
-                </div>
-            </div>  
-            {% empty %}
-            <p class="text-white">Nenhum NPC cadastrado ainda.</p>
+    <a href="/npc/add/"> Criar novo npc </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome</th>
+                <th> Classe </th>
+                <th> Raça </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for npc in npcs %}
+            <tr>
+                <td> {{ npc.nome }}</td>
+                <td> {{ npc.classe}}</td>
+                <td> {{ npc.raca }}</td>
+                <td> <a href="/npc/{{npc.id}}"> Detalhes </a> </td>
+                <td> <a href="/npc/edit/{{npc.id}}"> Editar </a> </td>
+                <td> <a href="/npc/delete/{{npc.id}}"> Deletar </a> </td>
+            </tr>
             {% endfor %}
-        </div>
-    </div>
-</section>
-{% endblock %}
+        </tbody>
+    </table>
+
+    {% endblock %}

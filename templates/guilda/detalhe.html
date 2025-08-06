@@ -1,3 +1,6 @@
+{% extends '_base.html' %}
+
+{% block content %}
 <h3>{{ guilda.nome }}</h3>
 
 <h4>Jogadores dessa guilda:</h4>
@@ -5,8 +8,10 @@
     {% for jogador in guilda.membros.all %}
     <li>{{ jogador.nome }} - {{ jogador.classe }} (Nível {{ jogador.nivel }})</li>
     {% empty %}
-    <li>Essa guilda ainda não tem jogadores.</li>
+    <li>Essa guilda ainda não tem membros.</li>
     {% endfor %}
 </ul>
 
 <a href="/guilda/">← Voltar</a>
+
+{% endblock %}

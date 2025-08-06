@@ -1,3 +1,6 @@
+{% extends '_base.html' %}
+
+{% block content %}
 <h3>Criar Guilda</h3>
 
 <form method="post"action="">
@@ -9,6 +12,9 @@
         <br> <br>
     {% endfor %}
 
+    <a href="/guilda/">← Voltar</a>
     <button type="submit">Editar</button>
 
 </form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ evento.tipo }}</h3>
+<h3>Data</h3>
+<p>{{ evento.data }}</p>
+<h3>Personagem</h3>
+<p>{{ evento.personagem }}</p>
+<h3>Descrição</h3>
+<p>{{ evento.descricao }}</p>
+
+<a href="/evento/">← Voltar</a>
+
+{% endblock %}

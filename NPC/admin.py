@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import npc
+from .models import Npc
 
-admin.site.register(npc)
+admin.site.register(Npc)
 
 # Register your models here.

@@ -1,10 +1,10 @@
 from django.db import models
 from Personagem.models import Personagem
-from Item.models import item
+from Item.models import Item
 
 class Inventario(models.Model):
     personagem = models.ForeignKey(Personagem, on_delete=models.CASCADE, related_name='inventario')
-    item = models.ForeignKey(item, on_delete=models.CASCADE)
+    item = models.ForeignKey(Item, on_delete=models.CASCADE)
     quantidade = models.IntegerField(default=1)
     equipado = models.BooleanField(default=False)
 

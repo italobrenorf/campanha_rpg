@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ monstro.nome }}</h3>
+<h3>Nível</h3>
+<p>{{ monstro.nivel }}</p>
+<h3>HP</h3>
+<p>{{ monstro.hp }}</p>
+<h3>Raça</h3>
+<p>{{ monstro.raca }}</p>
+<h3>Descrição</h3>
+<p>{{ monstro.descricao }}</p>
+
+<a href="/monstro/">← Voltar</a>
+
+{% endblock %}

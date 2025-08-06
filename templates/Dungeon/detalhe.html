@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block content %}
+<h3>{{ dungeon.nome }}</h3>
+<h3>Nível Mínimo</h3>
+<p>{{ dungeon.nivel_minimo }}</p>
+<h3>Descrição</h3>
+<p>{{ dungeon.descricao }}</p>
+
+<a href="/dungeon/">← Voltar</a>
+
+{% endblock %}

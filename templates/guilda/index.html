@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '_base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guildas</title>
-</head>
-
-<body>
+{% block content %}
     <h3>Aqui mostra as Guildas</h3>
 
     <a href="/guilda/add/"> Criar nova guida </a>
@@ -22,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for guildas in guilda %}
+            {% for guilda in guildas %}
             <tr>
                 <td> {{ guilda.nome }}</td>
                 <td> <a href="/guilda/{{guilda.id}}"> Detalhes </a> </td>
@@ -32,6 +25,4 @@
             {% endfor %}
         </tbody>
     </table>
-</body>
-
-</html>
+{% endblock %}

@@ -1,11 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dungeons</title>
-</head>
-<body>
-    Aqui mostra os dungeons
-</body>
-</html>
+{% extends '_base.html' %}
+
+{% block content %}
+    <h3>Aqui mostra os dungeons</h3>
+
+    <a href="/dungeon/add/"> Criar novo dungeon </a>
+
+    <table>
+        <thead>
+            <tr>
+                <th> Nome </th>
+                <th> Nível Mínimo </th>
+                <th> Detalhe </th>
+                <th> Edita </th>
+                <th> Deleta </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dungeon in dungeons %}
+            <tr>
+                <td> {{ dungeon.nome }}</td>
+                <td> {{ dungeon.nivel_minimo }}</td>
+                <td> <a href="/dungeon/{{dungeon.id}}"> Detalhes </a> </td>
+                <td> <a href="/dungeon/edit/{{dungeon.id}}"> Editar </a> </td>
+                <td> <a href="/dungeon/delete/{{dungeon.id}}"> Deletar </a> </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}
