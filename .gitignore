@@ -13,5 +13,5 @@ venv/
 *.log
 
 # Diretórios estáticos e de mídia
-/static/
+# /static/
 media/
